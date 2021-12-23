@@ -8,15 +8,17 @@ namespace app\core;
  */
 class Application
 {
-    public Router $route;
+    public static string $ROOT_DIR;
+    public Router $router;
     public Request $request;
-    public function __construct()
+    public function __construct($rootPath)
     {
+        self::$ROOT_DIR = $rootPath;
         $this->request = new Request();
-        $this->route = new Router($this->request);
+        $this->router = new Router($this->request);
     }
     public function run()
     {
-        $this->route->resolve();
+        echo $this->router->resolve();
     }
 }
