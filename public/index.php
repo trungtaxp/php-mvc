@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__.'/vendor/autoload.php';
+require_once __DIR__.'/../vendor/autoload.php';
 
 use app\core\Application;
 
@@ -9,7 +9,7 @@ $app->route->get('/', function(){
     echo "Hello World";
 });
 $app->route->get('/contact', function(){
-    echo "print contact";
+    echo "Print Contact";
 });
 
 $app->run();
