@@ -1,0 +1,16 @@
+{
+    "name": "tapham/php-mvc",
+    "autoload": {
+        "psr-4": {
+            "app\\": "./",
+            "Tapham\\PhpMvc\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "trungtaxp",
+            "email": "phamtrungta2001@gmail.com"
+        }
+    ],
+    "require": {}
+}

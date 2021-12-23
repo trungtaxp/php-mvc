@@ -20,6 +20,7 @@ class Request
     // chuc nang la lay url de tra ve gia tri trong url
     public function getMethod()
     {
-
+        return strtolower($_SERVER['REQUEST_METHOD']);
+        // method bat su kien khi dia chi url trong request.
     }
 }
