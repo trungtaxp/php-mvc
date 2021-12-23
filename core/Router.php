@@ -31,6 +31,11 @@ class Router
         $this->routes['get'][$path] = $callback;
         //chu thich dong 12
     }
+    public function post($path, $callback)
+    {
+        $this->routes['post'][$path] = $callback;
+        //chu thich dong 12
+    }
 
     public function resolve()
     {
@@ -39,7 +44,7 @@ class Router
         $callback = $this->routes[$method][$path] ?? false;
         if ($callback === false) {
             $this->response->setStatusCode(404);
-            return "Not found ";
+            return $this->rendrContent("Not found");
         }
         if (is_string($callback)) {
             return $this->rendrView($callback);
@@ -52,6 +57,11 @@ class Router
     {
         $layoutContent = $this->layoutContent();
         $viewContent = $this->rendrOnlyViews($view);
+        return str_replace('{{content}}', $viewContent, $layoutContent);
+    }
+    public function rendrContent($viewContent)
+    {
+        $layoutContent = $this->layoutContent();
         return str_replace('{{content}}', $viewContent, $layoutContent);
     }
 
