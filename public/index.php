@@ -5,11 +5,8 @@ use app\core\Application;
 
 $app = new Application();
 
-$app->route->get('/', function(){
-    echo "Hello World";
-});
-$app->route->get('/contact', function(){
-    echo "Print Contact";
-});
+$app->router->get('/', 'home');
+
+$app->router->get('/contact', 'contact');
 
 $app->run();
