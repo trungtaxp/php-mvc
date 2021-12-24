@@ -52,7 +52,7 @@ class Router
         if(is_array($callback)) {
             $callback[0] = new $callback[0]();
         }
-        //fix loi controller class khong ho tro trong php 7.4
+        //fix loi controller class khong ho tro trong php 7.4 va nhan duong dan them duoi
         return call_user_func($callback);
         //call_user_func la goi lai ham noi khac.
     }

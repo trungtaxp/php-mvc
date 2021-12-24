@@ -3,29 +3,31 @@
 namespace app\controllers;
 
 use app\core\Application;
+use app\core\Controller;
 
 /**
  * @package app\controllers
  */
- class SiteController
+ class SiteController extends Controller
 {
 
      public function home()
      {
         $params = [
-            'name'=> "21312312"
+            'name'=> "to page"
         ];
-        //truyen them tham so sau link de bat su kien 
-         return Application::$app->router->rendrView('home', $params);
+        //truyen them tham so sau link de bat su kien
+         return $this->rendr('home', $params);
      }
 
     public function contact()
     {
-        return Application::$app->router->rendrView('contact');
+        return $this->rendr('contact');
     }
     public function handleContact()
     {
-        return Application::$app->router->rendrView('contact');
+        var_dump($_POST);
+        return "dang nhap thanh cong";
     }
 
 }

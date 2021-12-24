@@ -23,4 +23,8 @@ class Request
         return strtolower($_SERVER['REQUEST_METHOD']);
         // method bat su kien khi dia chi url trong request.
     }
+    public function getBody()
+    {
+
+    }
 }
