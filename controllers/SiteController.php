@@ -12,7 +12,11 @@ use app\core\Application;
 
      public function home()
      {
-         return Application::$app->router->rendrView('home');
+        $params = [
+            'name'=> "21312312"
+        ];
+        //truyen them tham so sau link de bat su kien 
+         return Application::$app->router->rendrView('home', $params);
      }
 
     public function contact()

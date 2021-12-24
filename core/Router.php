@@ -57,11 +57,12 @@ class Router
         //call_user_func la goi lai ham noi khac.
     }
 
-    public function rendrView($view)
+    public function rendrView($view, $params = [])
     {
         $layoutContent = $this->layoutContent();
-        $viewContent = $this->rendrOnlyViews($view);
+        $viewContent = $this->rendrOnlyViews($view, $params);
         return str_replace('{{content}}', $viewContent, $layoutContent);
+        // thay the {{content}} -> layout khac (frontend).
     }
     public function rendrContent($viewContent)
     {
@@ -79,8 +80,11 @@ class Router
         // đóng cải thiện.
     }
 
-    protected function rendrOnlyViews($view)
+    protected function rendrOnlyViews($view, $params)
     {
+        foreach ($params as $key => $value) {
+            $$key = $value;
+        }
         ob_start();
         include_once Application::$ROOT_DIR . "/views/$view.php";
         return ob_get_clean();
