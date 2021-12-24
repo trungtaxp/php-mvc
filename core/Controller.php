@@ -4,7 +4,13 @@ namespace app\core;
 
 class Controller
 {
-    public function rendr($view, $params = [])
+    public string $layout = 'main';
+    public function setLayout($layout)
+    {
+        $this->layout = $layout;
+    }
+
+    public function render($view, $params = [])
     {
         return Application::$app->router->rendrView($view, $params);
     }

@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\core\Application;
 use app\core\Controller;
+use app\core\Request;
 
 /**
  * @package app\controllers
@@ -17,16 +18,17 @@ use app\core\Controller;
             'name'=> "to page"
         ];
         //truyen them tham so sau link de bat su kien
-         return $this->rendr('home', $params);
+         return $this->render('home', $params);
      }
 
     public function contact()
     {
-        return $this->rendr('contact');
+        return $this->render('contact');
     }
-    public function handleContact()
+    public function handleContact(Request $request)
     {
-        var_dump($_POST);
+        $body = Application::$app->request->getBody();
+        var_dump($body);
         return "dang nhap thanh cong";
     }
 
