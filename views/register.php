@@ -1,5 +1,4 @@
 <h1>Create an account</h1>
-?>
 <form action="" method="post">
     <div class="row">
         <div class="col">
