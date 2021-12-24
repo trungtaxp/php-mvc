@@ -2,11 +2,11 @@
 <form action="" method="post">
     <div class="mb-3">
         <label>Email</label>
-        <input type="email" name="email" class="form-control">
+        <input type="email" name="Email" class="form-control">
     </div>
     <div class="mb-3">
         <label>Password</label>
-        <input type="password" name="password" class="form-control">
+        <input type="password" name="Password" class="form-control">
     </div>
     <div class="mb-3 form-check">
         <input type="checkbox" class="form-check-input">
