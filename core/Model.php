@@ -66,11 +66,20 @@ abstract class Model
     public function errorMessages()
     {
         return [
-            self::RULE_REQUIRED => 'Con du lieu trong',
+            self::RULE_REQUIRED => 'Du lieu con trong',
             self::RULE_EMAIL => 'Email khong duoc de trong',
             self::RULE_MIN => 'Mat khau toi thieu {Min} ky tu',
             self::RULE_MAX => 'Mat khau khong qua {Max} ky tu',
             self::RULE_MATCH => 'Mat khau khong trung nhau',
         ];
+    }
+
+    public function hasError($attribute)
+    {
+        return $this->errors[$attribute] ?? false;
+    }
+    public function getFirstError($attribute)
+    {
+        return $this->errors[$attribute][0] ?? false;
     }
 }

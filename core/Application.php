@@ -44,4 +44,5 @@ class Application
     {
         echo $this->router->resolve();
     }
+
 }

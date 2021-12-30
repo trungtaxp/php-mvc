@@ -12,5 +12,7 @@
             "email": "phamtrungta2001@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "symfony/var-dumper": "^6.0"
+    }
 }

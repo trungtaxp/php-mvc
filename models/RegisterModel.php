@@ -6,15 +6,15 @@ use app\core\Model;
 
 class RegisterModel extends Model
 {
-    public string $Firstname;
-    public string $Lastname;
-    public string $Email;
-    public string $Password;
-    public string $PasswordConfirm;
+    public string $Firstname = '';
+    public string $Lastname = '';
+    public string $Email = '';
+    public string $Password = '';
+    public string $PasswordConfirm = '';
 
-    public function register()
+    public function register(): void
     {
-        echo "Creating new user";
+        echo "Dang ky tai khoan thanh cong";
     }
 
     public function rules(): array
